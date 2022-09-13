@@ -16,22 +16,22 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  # get "/books/all/title_ascending" do 
-  #   books = Book.all.title_ascending
-  #   books.to_json
-  # end
-  # get "/books/all/title_descending" do 
-  #   books = Book.all.title_descending
-  #   books.to_json
-  # end
-  # get "/books/all/by_price_ascending" do
-  #   books = Book.all.by_price_ascending
-  #   books.to_json
-  # end
-  # get "/books/all/by_price_descending" do
-  #   books = Book.all.by_price_descending
-  #   books.to_json
-  # end
+  get "/books/all/title_ascending" do 
+    books = Book.all.title_ascending
+    books.to_json
+  end
+  get "/books/all/title_descending" do 
+    books = Book.all.title_descending
+    books.to_json
+  end
+  get "/books/all/by_price_ascending" do
+    books = Book.all.by_price_ascending
+    books.to_json
+  end
+  get "/books/all/by_price_descending" do
+    books = Book.all.by_price_descending
+    books.to_json
+  end
 
 
   post "/books" do 
@@ -105,10 +105,10 @@ class ApplicationController < Sinatra::Base
       binding.pry
   end
 
-  # delete "/authors/:id" do
-  #   authors = Author.find(params[:id])
-  #   authors.destroy
-  #   authors.to_json
-  # end
+  delete "/authors/:id" do
+    authors = Author.find(params[:id])
+    authors.destroy
+    authors.to_json
+  end
 
 end
