@@ -24,12 +24,12 @@ class ApplicationController < Sinatra::Base
     books = Book.all.title_descending
     books.to_json
   end
-  get "/books/all/by_price_ascending" do
-    books = Book.all.by_price_ascending
+  get "/books/all/by_review_ascending" do
+    books = Book.all.by_review_ascending
     books.to_json
   end
-  get "/books/all/by_price_descending" do
-    books = Book.all.by_price_descending
+  get "/books/all/by_review_descending" do
+    books = Book.all.by_review_descending
     books.to_json
   end
 
@@ -44,7 +44,7 @@ class ApplicationController < Sinatra::Base
     new_book = author.books.create(
       title: params[:title],
       description: params[:description],
-      price: params[:price],
+      review: params[:review],
       pages: params[:pages],
     )
     new_book.to_json
@@ -55,7 +55,7 @@ class ApplicationController < Sinatra::Base
     book.update(
       title: params[:title],
       description: params[:description],
-      price: params[:price],
+      review: params[:review],
       pages: params[:pages],
     )
     
@@ -105,10 +105,10 @@ class ApplicationController < Sinatra::Base
       binding.pry
   end
 
-  delete "/authors/:id" do
-    authors = Author.find(params[:id])
-    authors.destroy
-    authors.to_json
-  end
+  # delete "/authors/:id" do
+  #   authors = Author.find(params[:id])
+  #   authors.destroy
+  #   authors.to_json
+  # end
 
 end

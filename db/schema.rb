@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_06_23_174030) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.float "price"
+    t.text "review"
     t.integer "pages"
     t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false

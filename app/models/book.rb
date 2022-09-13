@@ -9,11 +9,11 @@ class Book < ActiveRecord::Base
         self.all.order(title: :desc)
     end
 
-    def self.by_price_ascending
-        self.all.order(price: :asc)
+    def self.by_review_ascending
+        self.all.order(review: :asc)
     end
 
-    def self.by_price_descending
-        self.all.order(price: :desc)
+    def self.by_review_descending
+        self.all.order(review: :desc)
     end
 end
